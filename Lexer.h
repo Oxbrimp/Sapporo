@@ -10,6 +10,11 @@ public:
 	int a;
 	Lexer();
 	void tokenise(std::string userInput);
+
+
+	//std::string removeWhitespace(std::string userInput); // Depreciated 
+
+
 };
 
 
