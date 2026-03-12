@@ -1,6 +1,6 @@
 #pragma once 
-#ifndef LEXER.h
-#define LEXER.h
+#ifndef LEXER_h
+#define LEXER_h
 
 #include <iostream>
 
