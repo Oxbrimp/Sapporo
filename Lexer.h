@@ -3,11 +3,12 @@
 #define LEXER_h
 
 #include <iostream>
+#include <vector>
 
 class Lexer
 {
 public:
-	int a;
+	std::vector<int> tokenisedInput;
 	Lexer();
 	void tokenise(std::string userInput);
 

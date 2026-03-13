@@ -1,13 +1,36 @@
 #include <iostream>
-#include "Lexer.h"
+#include<vector>
+#include<unordered_map>
 
+
+#include "Lexer.h"
+#include "Token.h"
+
+// Constructor Method
 Lexer::Lexer()
 {
 
 }
 
+// Only alphabetical symbols 
+static const std::unordered_map<std::string, TokenType> KEYWORDS =
+{
+	{"display", TokenType::DISPLAY},
+	{"dis", TokenType::DIS}
+};
+
+
+// Parses the User Input and tokenises all relevant keywords
 void Lexer::tokenise(std::string userInput)
 {
+	
+	size_t pos = 0; // Positive Unsign. Int Counter for Looping
+	while (pos < userInput.length())
+	{
+		char c = userInput[pos];
+
+	}
+
 
 }
 

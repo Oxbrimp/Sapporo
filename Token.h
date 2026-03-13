@@ -6,18 +6,22 @@
 
 enum class TokenType
 {
-	Identifier,
-	Number,
-	Plus,
-	Minus,
-	Multiply,
-	Divide,
-	Power,
-	Assign,
-	StartStatm,
-	Tilde,
-	EndStatm,
-	EndOfFile
+	IDENTIFIER, // ie  = 
+	NUMBER,
+	PLUS,
+	MINUS,
+	MULTIPLY,
+	DIVIDE,
+	POWER,
+	ASSIGN,
+	STARTSTATM,
+	TILDE,
+	ENDSTATM,
+	ENDOFFILE,
+	DISPLAY,
+	LPAREN,
+	RPAREN,
+	DIS
 };
 
 struct Token
