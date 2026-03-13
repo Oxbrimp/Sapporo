@@ -67,6 +67,20 @@ void Lexer::tokenise(std::string userInput)
 		}
 
 
+
+		// Handling digits 
+		if (isdigit(c))
+		{
+			size_t start = pos;
+			while (pos < userInput.length() && isdigit(userInput[pos]))
+			{
+				pos++;
+			}
+			std::string number = userInput.substr(start, pos - start);
+			tokens->push_back({ TokenType::NUMBER, number });
+			continue;
+		}
+
 		switch (c)
 		{
 		case '+': tokens->push_back({ TokenType::PLUS, "+"}); break;
@@ -80,7 +94,7 @@ void Lexer::tokenise(std::string userInput)
 
 
 		default:
-			std::cerr << "Uknown Character : " << c << "\n";
+			std::cerr << "Unknown Character : " << c << "\n";
 		}
 
 		pos++;

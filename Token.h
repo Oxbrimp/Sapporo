@@ -24,6 +24,9 @@ enum class TokenType
 	DIS
 };
 
+std::string tokenTypeToString(TokenType type);
+
+
 struct Token
 {
 	TokenType type;
