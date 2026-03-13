@@ -1,5 +1,8 @@
 #include <iostream>
-#include "Lexer.h"
+#include <vector>
+
+#include"Lexer.h"
+#include"Token.h"
 
 
 
@@ -24,9 +27,11 @@ int main()
 	Lexer lexer;
 
 	// test input - should output '86'
-	std::string input = "a=   2+  2~display (2^3)b=2~display (b+a)";
+	//std::string input = "a=   2+  2~display (2^3)b=2~display (b+a)";
+	std::string input = "2+3-1";
 
-
+	lexer.tokenise(input);
+	std::vector<Token> &c = lexer.returnTokenisedVector();
 	
 
 	//std::string val = lexer.removeWhitespace(input);
