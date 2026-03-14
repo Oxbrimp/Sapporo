@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Sapporo.vcxproj" />
+  <Project Path="Sapporo.vcxproj" Id="9b0e6b3f-2d70-4b97-b2eb-33255af64b52" />
 </Solution>
