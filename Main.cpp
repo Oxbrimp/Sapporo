@@ -26,7 +26,7 @@
 int main()
 {
 	Lexer lexer;
-	Parser parser;
+	
 
 	// test input - should output '86'
 	//std::string input = "a=   2+  2~display (2^3)b=2~display (b+a)";
@@ -64,7 +64,9 @@ int main()
 
 	std::cout << lexedInput;
 
-	parser.receiveParsedLexer(lexedInput);
+
+
+	Parser parser(c);
 
 
 

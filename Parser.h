@@ -17,17 +17,25 @@ public:
 	ASTNode* parse(); // root of AST
 
 
-	std::string lexerTokens; // Parsed form of Lexer Tokens
-	Token peekNavigateToken();
-	void parse(std::vector<Token> lexedOutput);
-
-	void receiveParsedLexer(std::string lexerOutput);
-
-
-
 
 private:
 
+	// definition of the token stream
+	std::vector<Token> lexerTokens; // Parsed form of Lexer Tokens
+	size_t cursor = 0; 
+
+	// navigation 
+	const Token& peek() const;
+	const Token& advance();
+	bool match(TokenType type);
+
+	const Token& expect(TokenType type);
+	bool atEnd() const;
+
+	// Grammar - TO DO : 
+	ASTNode* parseProgram();
+	//ASTNode* parseStatement();
+	//ASTNode* parseDisplay();
 
 
 };
