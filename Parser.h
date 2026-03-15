@@ -34,8 +34,14 @@ private:
 
 	// Grammar - TO DO : 
 	ASTNode* parseProgram();
-	//ASTNode* parseStatement();
-	//ASTNode* parseDisplay();
+	ASTNode* parseStatement();
+	ASTNode* parseDisplay();
+
+	// BIDMAS Responsible codes
+	ASTNode* parseExpression();
+	ASTNode* parseTerm();
+	ASTNode* parseFactor();
+	ASTNode* parsePrimary();
 
 
 };

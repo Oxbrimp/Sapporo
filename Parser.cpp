@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <vector>
+#include <Binar>
 
 #include"Parser.h"
 #include"Token.h"
@@ -61,3 +62,47 @@ ASTNode* Parser::parseProgram()
 }
 
 
+// Handling of + & - expressions
+ASTNode* Parser::parseExpression()
+{
+	ASTNode* left = parseTerm();
+
+	while (match(TokenType::PLUS) || match(TokenType::MINUS))
+	{
+		Token operatorConsumed = lexerTokens[cursor - 1]; // Operator just consumed 
+		ASTNode* right = parseTerm();
+		//left = new BinaryOpNode(left, op, right);
+	}
+
+	return left;
+}
+
+
+// Handling of * & / expressions 
+ASTNode* Parser::parseTerm()
+{
+	ASTNode* left = parseFactor();
+
+	while (match(TokenType::MULTIPLY) || match(TokenType::DIVIDE))
+	{
+		Token operatorConsumed = lexerTokens[cursor - 1]; 
+		ASTNode* right = parseFactor();
+		//left = new BinaryOpNode(left, op, right);
+	}
+
+	return left;
+}
+
+
+// Handling of exponentiations ( ^ ) 
+ASTNode* Parser::parseFactor()
+{
+	ASTNode* left parsePrimary();
+
+	if (match(TokenType::POWER))
+	{
+		Token op = lexerTokens[cursor - 1];
+		ASTNode* right = parseFactor(); // recursive procedure 
+	}
+	return left;
+}
