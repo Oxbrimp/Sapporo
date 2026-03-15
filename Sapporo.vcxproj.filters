@@ -16,6 +16,12 @@
     <Filter Include="Solution Resources">
       <UniqueIdentifier>{d205c36f-5d2b-4fa3-bb9d-9c7619b4920c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ASTSource">
+      <UniqueIdentifier>{e256d3c5-39d7-4b5e-9c4b-a3acecd8c767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ASTHeader">
+      <UniqueIdentifier>{f524e16c-3479-4620-b3d0-e618889da96e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore">
@@ -38,6 +44,18 @@
     <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ASTNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOpNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentifierNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="LanguageIntuition.txt">
@@ -53,6 +71,18 @@
     </ClInclude>
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ASTNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOpNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentifierNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

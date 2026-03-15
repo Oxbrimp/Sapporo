@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include <vector>
-#include <Binar>
 
 #include"Parser.h"
 #include"Token.h"
@@ -93,6 +92,30 @@ ASTNode* Parser::parseTerm()
 	return left;
 }
 
+// Handling Numbers / Identifiers / Parentheses 
+ASTNode* Parser::parsePrimary()
+{
+	if (match(TokenType::NUMBER))
+	{
+		Token number = tokens[cursor - 1];
+		return new NumberNode(number.value);
+	}
+
+	if (match(TokenType::IDENTIFIER))
+	{
+		Token id = tokens[cursor - 1];
+		return new IdentifierNode(id.value);
+	}
+
+	if (match(TokenType::LPAREN))
+	{
+		ASTNode* expr = parseExpression();
+		expect(TokenType::RPAREN);
+		return expr;
+	}
+
+	return nullptr;
+}
 
 // Handling of exponentiations ( ^ ) 
 ASTNode* Parser::parseFactor()
@@ -104,5 +127,8 @@ ASTNode* Parser::parseFactor()
 		Token op = lexerTokens[cursor - 1];
 		ASTNode* right = parseFactor(); // recursive procedure 
 	}
+
 	return left;
 }
+
+
