@@ -5,6 +5,17 @@
 #include"Parser.h"
 #include"Token.h"
 
+// AST Inclusion 
+#include"ASTNode.h"
+// Subcategories of ASTNode Inclusion
+#include"NumberNode.h"
+#include"IdentifierNode.h"
+#include"BinaryOpNode.h"
+#include"DisplayNode.h"
+#include"AssignmentNode.h"
+#include"ProgramNode.h"
+
+
 // Constructor Method 
 Parser::Parser(const std::vector<Token>& token) : lexerTokens(token)
 {
@@ -70,7 +81,7 @@ ASTNode* Parser::parseExpression()
 	{
 		Token operatorConsumed = lexerTokens[cursor - 1]; // Operator just consumed 
 		ASTNode* right = parseTerm();
-		//left = new BinaryOpNode(left, op, right);
+		left = new BinaryOpNode(left, operatorConsumed, right);
 	}
 
 	return left;
@@ -86,7 +97,7 @@ ASTNode* Parser::parseTerm()
 	{
 		Token operatorConsumed = lexerTokens[cursor - 1]; 
 		ASTNode* right = parseFactor();
-		//left = new BinaryOpNode(left, op, right);
+		left = new BinaryOpNode(left, operatorConsumed, right);
 	}
 
 	return left;
@@ -97,13 +108,13 @@ ASTNode* Parser::parsePrimary()
 {
 	if (match(TokenType::NUMBER))
 	{
-		Token number = tokens[cursor - 1];
+		Token number = lexerTokens[cursor - 1];
 		return new NumberNode(number.value);
 	}
 
 	if (match(TokenType::IDENTIFIER))
 	{
-		Token id = tokens[cursor - 1];
+		Token id = lexerTokens[cursor - 1];
 		return new IdentifierNode(id.value);
 	}
 
@@ -120,7 +131,7 @@ ASTNode* Parser::parsePrimary()
 // Handling of exponentiations ( ^ ) 
 ASTNode* Parser::parseFactor()
 {
-	ASTNode* left parsePrimary();
+	ASTNode* left = parsePrimary();
 
 	if (match(TokenType::POWER))
 	{
