@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="AssignmentNode.h" />
     <ClInclude Include="ASTNode.h" />
+    <ClInclude Include="ASTPrinter.h" />
     <ClInclude Include="BinaryOpNode.h" />
     <ClInclude Include="DisplayNode.h" />
     <ClInclude Include="IdentifierNode.h" />

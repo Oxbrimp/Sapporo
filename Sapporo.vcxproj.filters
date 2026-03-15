@@ -102,5 +102,8 @@
     <ClInclude Include="ProgramNode.h">
       <Filter>Header Files\ASTHeader</Filter>
     </ClInclude>
+    <ClInclude Include="ASTPrinter.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -109,7 +109,7 @@ ASTNode* Parser::parsePrimary()
 	if (match(TokenType::NUMBER))
 	{
 		Token number = lexerTokens[cursor - 1];
-		return new NumberNode(number.value);
+		return new NumberNode(std::stod(number.value)); // string to double 
 	}
 
 	if (match(TokenType::IDENTIFIER))

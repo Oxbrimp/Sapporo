@@ -3,7 +3,9 @@
 
 #include"Lexer.h"
 #include"Token.h"
+
 #include"Parser.h"
+#include"ASTPrinter.h"
 
 
 
@@ -67,6 +69,9 @@ int main()
 
 
 	Parser parser(c);
+	ASTNode* root = parser.parse();
+	ASTPrinter::print(root);
+
 
 
 
