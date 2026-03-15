@@ -135,8 +135,9 @@ ASTNode* Parser::parseFactor()
 
 	if (match(TokenType::POWER))
 	{
-		Token op = lexerTokens[cursor - 1];
+		Token operatorConsumed = lexerTokens[cursor - 1];
 		ASTNode* right = parseFactor(); // recursive procedure 
+		return new BinaryOpNode(left, operatorConsumed, right);
 	}
 
 	return left;
