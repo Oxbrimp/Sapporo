@@ -56,6 +56,15 @@
     <ClCompile Include="IdentifierNode.cpp">
       <Filter>Source Files\ASTSource</Filter>
     </ClCompile>
+    <ClCompile Include="Displaynode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
+    <ClCompile Include="AssignmentNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramNode.cpp">
+      <Filter>Source Files\ASTSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="LanguageIntuition.txt">
@@ -82,6 +91,15 @@
       <Filter>Header Files\ASTHeader</Filter>
     </ClInclude>
     <ClInclude Include="IdentifierNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="AssignmentNode.h">
+      <Filter>Header Files\ASTHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramNode.h">
       <Filter>Header Files\ASTHeader</Filter>
     </ClInclude>
   </ItemGroup>
